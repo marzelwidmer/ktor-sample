@@ -1,9 +1,9 @@
-package ch.keepcalm
+package com.example
 
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import ch.keepcalm.plugins.*
+import com.example.plugins.*
 
 fun main() {
     embeddedServer(Netty, port = 8080, host = "0.0.0.0", module = Application::module)
@@ -11,5 +11,8 @@ fun main() {
 }
 
 fun Application.module() {
+    configureTemplating()
+    configureHTTP()
+    configureSerialization()
     configureRouting()
 }

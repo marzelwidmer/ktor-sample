@@ -1,7 +1,13 @@
-package ch.keepcalm
+package com.example
 
 import io.ktor.server.routing.*
 import io.ktor.http.*
+import freemarker.cache.*
+import io.ktor.server.freemarker.*
+import io.ktor.server.plugins.compression.*
+import io.ktor.server.plugins.conditionalheaders.*
+import io.ktor.serialization.kotlinx.json.*
+import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.request.*
@@ -9,7 +15,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import kotlin.test.*
 import io.ktor.server.testing.*
-import ch.keepcalm.plugins.*
+import com.example.plugins.*
 
 class ApplicationTest {
     @Test
